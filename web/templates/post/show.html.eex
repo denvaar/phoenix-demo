@@ -1,0 +1,16 @@
+<%= link "← Back", to: post_path(@conn, :index) %>
+&nbsp;|
+<%= link "Edit", to: post_path(@conn, :edit, @post) %>
+
+<div class="jumbotron">
+  <h2><%= @post.title %></h2>
+  <h5>By <%= @post.author %></h5>
+  <strong>Reads:</strong>
+  <%= @post.reads %>
+  <strong>Likes:</strong>
+  <%= @post.likes %>
+</div>
+<div>
+  <%= @post.content %>
+
+</div>

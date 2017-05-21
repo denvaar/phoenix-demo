@@ -1,0 +1,13 @@
+<h2>Posts</h2>
+<div class="text-right">
+  <%= link "New post", to: post_path(@conn, :new), class: "btn btn-success" %>
+</div>
+<%= for post <- @posts do %>
+  <div class="list-item-container">
+    <%= link to: post_path(@conn, :show, post) do %>
+      <h3><%= post.title %></h3>
+    <% end %>
+    <div>By <%= post.author %> on <%= post.inserted_at %></div>
+    <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+  </div>
+<% end %>

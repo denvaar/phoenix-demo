@@ -1,0 +1,8 @@
+/* This file is for your main application css. */
+.list-item-container {
+  padding: 1em;
+  margin-top: 0.5em;
+  border: 1px solid #f69f84;
+  border-radius: 3px;
+  background: #eff7fb;
+}
