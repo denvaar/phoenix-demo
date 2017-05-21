@@ -2,8 +2,8 @@
 
 ### Todo
 
- - [] "Like" button to update posts async.
- - [] Update "reads" column upon `:show` action.
+ - [ ] "Like" button to update posts async.
+ - [ ] Update "reads" column upon `:show` action.
  - [x] Use slugs rather than ids in the urls.
 
 To start your Phoenix app:
