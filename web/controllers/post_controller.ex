@@ -16,7 +16,7 @@ defmodule PhoenixBlog.PostController do
 
   def create(conn, %{"post" => post_params}) do
     changeset = Post.changeset(%Post{}, post_params)
-
+    
     case Repo.insert(changeset) do
       {:ok, _post} ->
         conn
@@ -29,6 +29,8 @@ defmodule PhoenixBlog.PostController do
 
   def show(conn, %{"id" => id}) do
     post = Repo.get_by!(Post, slug: id)
+    changeset = Post.changeset(post, %{reads: post.reads + 1})
+    Repo.update!(changeset)
     render(conn, "show.html", post: post)
   end
 

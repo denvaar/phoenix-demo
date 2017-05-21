@@ -3,10 +3,13 @@
 ### Todo
 
  - [ ] "Like" button to update posts async.
- - [ ] Update "reads" column upon `:show` action.
+ - [x] Update "reads" column upon `:show` action.
  - [x] Use slugs rather than ids in the urls.
  - [x] Do some migrations n stuff.
  - [ ] Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
+ - [x] Pagination
+ - [x] Markdown support
+ - [ ] Custom error pages
 
 To start your Phoenix app:
 

@@ -11,6 +11,6 @@
   <%= @post.likes %>
 </div>
 <div>
-  <%= @post.content %>
+  <%= as_html(@post.content) %>
 
 </div>
