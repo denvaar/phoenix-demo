@@ -1,8 +1,7 @@
 <h2>Edit post</h2>
 
 <%= link "← Back", to: post_path(@conn, :index) %>
-<%= render "form.html", conn: @conn,
-                        post: @post,
+<%= render "form.html", post: @post,
                         changeset: @changeset,
                         action: post_path(@conn, :update, @post) %>
-
+<%= link "Delete", to: post_path(@conn, :delete, @post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-md" %>

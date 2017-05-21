@@ -17,6 +17,9 @@ config :phoenix_blog, PhoenixBlog.Endpoint,
   pubsub: [name: PhoenixBlog.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+config :scrivener_html,
+  routes_helper: PhoenixBlog.Router.Helpers
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
