@@ -5,6 +5,7 @@
  - [ ] "Like" button to update posts async.
  - [ ] Update "reads" column upon `:show` action.
  - [x] Use slugs rather than ids in the urls.
+ - [x] Do some migrations n stuff.
 
 To start your Phoenix app:
 
