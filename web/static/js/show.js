@@ -1,12 +1,13 @@
 export const Show  = {
   run: () => {
     const likeButton = document.getElementById("like-button");
-    likeButton.addEventListener("click", () => handleLikePost(likeButton.dataset.postId), false);
+    likeButton.addEventListener("click", () =>
+      handleLikePost(likeButton.dataset.postId), false);
   }
 }
 
 const handleLikePost = (postId) => {
-  fetch(`/api/posts/${postId}/like`, { method: "PATCH" })
+  fetch(likeUrl, { method: "PATCH" })
     .then(res => res.json())
     .then(data => {
       document.getElementById("like-counter").innerHTML = data;
