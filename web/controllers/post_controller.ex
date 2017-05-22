@@ -5,6 +5,7 @@ defmodule PhoenixBlog.PostController do
 
   def index(conn, params) do
     page = Post
+           |> Post.sorted
            |> Repo.paginate(params)
     render(conn, "index.html", posts: page.entries, page: page)
   end
@@ -38,6 +39,22 @@ defmodule PhoenixBlog.PostController do
     post = Repo.get_by!(Post, slug: id)
     changeset = Post.changeset(post)
     render(conn, "edit.html", post: post, changeset: changeset)
+  end
+
+  def like_post(conn, %{"id" => id}) do
+    post = Repo.get(Post, id)
+    changeset = Post.changeset(post, %{likes: post.likes + 1})
+    
+    case Repo.update(changeset) do
+      {:ok, post} ->
+        conn
+        |> put_flash(:info, "You liked this post!")
+        render(conn, "likes.json", likes: post.likes)
+      {:error, changeset} ->
+        conn
+        |> put_flash(:error, "Error trying to update post.")
+        render(conn, "likes.json", likes: post.likes)
+    end
   end
 
   def update(conn, %{"id" => id, "post" => post_params}) do

@@ -8,9 +8,12 @@
   <strong>Reads:</strong>
   <%= @post.reads %>
   <strong>Likes:</strong>
-  <%= @post.likes %>
+  <span id="like-counter"><%= @post.likes %></span>
 </div>
 <div>
+  <button class="btn btn-info" data-post-id="<%= @post.id %>" id="like-button">&#128077;</button>
   <%= as_html(@post.content) %>
-
 </div>
+
+<script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+<script>require("web/static/js/show").Show.run()</script>

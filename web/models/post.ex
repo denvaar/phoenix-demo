@@ -13,6 +13,11 @@ defmodule PhoenixBlog.Post do
     timestamps()
   end
 
+  def sorted(query) do
+    from p in query,
+    order_by: [asc: p.inserted_at]
+  end
+
   @doc """
   Builds a changeset based on the `struct` and `params`.
   """

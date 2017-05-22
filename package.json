@@ -6,6 +6,8 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
+    "fetch": "^1.1.0",
+    "moment": "^2.18.1",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html"
   },

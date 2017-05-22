@@ -2,14 +2,19 @@
 
 ### Todo
 
- - [ ] "Like" button to update posts async.
+ - [x] "Like" button to update posts async.
  - [x] Update "reads" column upon `:show` action.
  - [x] Use slugs rather than ids in the urls.
  - [x] Do some migrations n stuff.
- - [ ] Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
+ - [x] Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
  - [x] Pagination
- - [x] Markdown support
+ - [x] Markdown support for post content
  - [ ] Custom error pages
+ - [ ] SSL
+ - [ ] File uploads/images
+ - [ ] Sessions -- Authenticated user functionallity
+ - [ ] Deploy to Heroku
+ - [ ] Deploy with Nginx
 
 To start your Phoenix app:
 

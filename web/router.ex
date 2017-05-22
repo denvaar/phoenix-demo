@@ -11,6 +11,8 @@ defmodule PhoenixBlog.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug :fetch_session
+    plug :fetch_flash
   end
 
   scope "/", PhoenixBlog do
@@ -20,8 +22,9 @@ defmodule PhoenixBlog.Router do
     resources "/posts", PostController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixBlog do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixBlog do
+    pipe_through :api
+
+    patch "/posts/:id/like", PostController, :like_post
+  end
 end

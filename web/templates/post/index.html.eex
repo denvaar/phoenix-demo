@@ -8,7 +8,7 @@
     <%= link to: post_path(@conn, :show, post) do %>
       <h3><%= post.title %></h3>
     <% end %>
-    <div>By <%= post.author %> on <%= post.inserted_at %></div>
+    <div>By <%= post.author %> on <span class="pretty-date"><%= post.inserted_at %></span></div>
     <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
   </div>
 <% end %>

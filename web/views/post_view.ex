@@ -7,4 +7,8 @@ defmodule PhoenixBlog.PostView do
     |> Earmark.as_html!
     |> raw
   end
+
+  def render("likes.json", %{likes: likes}) do
+    likes
+  end
 end
