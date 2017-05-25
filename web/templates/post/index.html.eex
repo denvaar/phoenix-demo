@@ -3,6 +3,9 @@
 <div class="text-right">
   <%= link "New post", to: post_path(@conn, :new), class: "btn btn-success" %>
 </div>
+<%= if length(@posts) == 0 do %>
+  <div>No posts to display</div>
+<%= else %>
 <%= for post <- @posts do %>
   <div class="list-item-container">
     <%= link to: post_path(@conn, :show, post) do %>
@@ -15,3 +18,4 @@
 <div class="text-center">
   <%= pagination_links @page, next: "Next", previous: "Previous" %>
 </div>
+<%= end %>

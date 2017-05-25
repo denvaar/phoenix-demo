@@ -9,6 +9,7 @@
  - [x] Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
  - [x] Pagination
  - [x] Markdown support for post content
+ - [x] Setup Docker for development
  - [ ] Custom error pages
  - [ ] SSL
  - [ ] File uploads/images
@@ -17,6 +18,14 @@
  - [ ] Deploy with Nginx
 
 To start your Phoenix app:
+
+  ### Docker setup
+
+  * `docker-compose build`
+  * `docker-compose run mix ecto.create && ecto.migrate`
+  * `docker-compose up`
+
+  ### Default setup
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
