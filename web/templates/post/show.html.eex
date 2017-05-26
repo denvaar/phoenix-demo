@@ -18,5 +18,5 @@
 <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
 <script>
   const likeUrl = "<%= post_path(@conn, :like_post, @post.id) %>";
-  require("web/static/js/show").Show.run();
+  require("./web/static/js/show").Show.run();
 </script>

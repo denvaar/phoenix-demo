@@ -1,4 +1,8 @@
 /* This file is for your main application css. */
+html {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
 .list-item-container {
   padding: 1em;
   margin-top: 0.5em;

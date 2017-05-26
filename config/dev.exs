@@ -11,9 +11,9 @@ config :phoenix_blog, PhoenixBlog.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../", __DIR__)]]
-
+  watchers: [
+    npm: ["run", "watch"]
+  ]
 
 # Watch static and templates for browser reloading.
 config :phoenix_blog, PhoenixBlog.Endpoint,
@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phoenix_blog, PhoenixBlog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("PG_USERNAME"),
-  password: System.get_env("PG_PASSWORD"),
-  database: System.get_env("PG_DATABASE"),
-  hostname: System.get_env("PG_HOST"),
+  username: "postgres", 
+  password: "postgres",
+  database: "phoenix_blog_dev",
+  hostname: "localhost",
   pool_size: 10

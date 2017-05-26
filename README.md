@@ -9,7 +9,8 @@
  - [x] Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
  - [x] Pagination
  - [x] Markdown support for post content
- - [x] Setup Docker for development
+ - [x] ~~Setup Docker for development~~ <-- This was a dumb idea
+ - [x] Use Webpack instead of Brunch (mostly)
  - [ ] Custom error pages
  - [ ] SSL
  - [ ] File uploads/images
