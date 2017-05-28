@@ -30,8 +30,6 @@
       </main>
 
     </div> <!-- /container -->
-    <%= static_path(@conn, "/js/app.js") %>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script>App.run()</script>
   </body>
 </html>

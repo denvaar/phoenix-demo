@@ -1,4 +1,4 @@
-export const Show  = {
+const Show  = {
   run: () => {
     const likeButton = document.getElementById("like-button");
     likeButton.addEventListener("click", () =>
@@ -16,3 +16,5 @@ const handleLikePost = (postId) => {
       alert(error)
     });
 }
+
+Show.run();

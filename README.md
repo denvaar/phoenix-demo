@@ -1,22 +1,22 @@
 # PhoenixBlog
 
-### Todo
+## Todo :paperclip:
 
- - [x] "Like" button to update posts async.
- - [x] Update "reads" column upon `:show` action.
- - [x] Use slugs rather than ids in the urls.
- - [x] Do some migrations n stuff.
- - [x] Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
- - [x] Pagination
- - [x] Markdown support for post content
- - [x] ~~Setup Docker for development~~ <-- This was a dumb idea
- - [x] Use Webpack instead of Brunch (mostly)
- - [ ] Custom error pages
- - [ ] SSL
- - [ ] File uploads/images
- - [ ] Sessions -- Authenticated user functionallity
- - [ ] Deploy to Heroku
- - [ ] Deploy with Nginx
+ - :white_check_mark: "Like" button to update posts async.
+ - :white_check_mark: Update "reads" column upon `:show` action.
+ - :white_check_mark: Use slugs rather than ids in the urls.
+ - :white_check_mark: Do some migrations n stuff.
+ - :white_check_mark: Figure out how to integrate Javascript dependencies, like MomentJS so that I can format dates pretty.
+ - :white_check_mark: Pagination
+ - :white_check_mark: Markdown support for post content
+ - :white_check_mark: ~~Setup Docker for development~~ <-- This was a dumb idea
+ - :white_check_mark: Use Webpack instead of Brunch
+ - :squirrel: Custom error pages
+ - :squirrel: SSL
+ - :white_check_mark: File uploads/images
+ - :squirrel: Sessions -- Authenticated user functionallity
+ - :squirrel: Deploy to Heroku
+ - :squirrel: Deploy with Nginx
 
 To start your Phoenix app:
 

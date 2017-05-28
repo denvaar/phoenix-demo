@@ -3,6 +3,10 @@ html {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
+pre, code {
+  font-family: Inconsolata,Menlo,Courier,monospace;
+}
+
 .list-item-container {
   padding: 1em;
   margin-top: 0.5em;

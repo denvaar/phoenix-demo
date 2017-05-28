@@ -3,24 +3,21 @@ var path = require("path");
 var ExtractTextPlugin = require("extract-text-webpack-plugin"),
     webpack = require("webpack");
 
-var config = module.exports = {
-  // our app's entry points - for this example we'll use a single each for
-  // css and js
-  entry: [
-   "./web/static/css/app.css",
-   "./web/static/js/app.js"
-  ],
-
-  // where webpack should output our files
+var config = {
+  entry: {
+    app: [
+      "js/app.js",
+      "css/app.css" /* putting this here to enable atuo-reload for css because they are not required in js files */
+    ],
+    show: "js/show.js"
+  },
   output: {
     path: "./priv/static",
-    filename: "js/app.js"
+    filename: "js/[name].js"
   },
-
   resolve: {
-    modules: [ "node_modules", __dirname + "/web/static/js" ]
+    modules: [ "node_modules", __dirname + "/web/static" ]
   },
-
   module: {
     loaders: [
       {
@@ -58,19 +55,16 @@ var config = module.exports = {
       }
     ]
   },
-
-  // what plugins we'll be using - in this case, just our ExtractTextPlugin.
-  // we'll also tell the plugin where the final CSS file should be generated
-  // (relative to config.output.path)
   plugins: [
-    new ExtractTextPlugin("css/app.css")
+    new ExtractTextPlugin("css/[name].css")
   ]
 };
 
-// if running webpack in production mode, minify files with uglifyjs
 if (process.env.NODE_ENV === "production") {
   config.plugins.push(
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({ minimize: true })
   );
 }
+
+module.exports = config;

@@ -2,6 +2,7 @@ defmodule PhoenixBlog.PostController do
   use PhoenixBlog.Web, :controller
 
   alias PhoenixBlog.Post
+  alias PhoenixBlog.ImageUploader
 
   def index(conn, params) do
     page = Post
@@ -58,6 +59,13 @@ defmodule PhoenixBlog.PostController do
   end
 
   def update(conn, %{"id" => id, "post" => post_params}) do
+    IO.inspect post_params
+    
+    if upload = post_params["photo"] do
+      extension = Path.extname(upload.filename)
+      File.cp(upload.path, Application.app_dir(:phoenix_blog, "priv/static/images/#{upload.filename}"))
+    end
+    
     post = Repo.get_by!(Post, slug: id)
     changeset = Post.changeset(post, post_params)
 
