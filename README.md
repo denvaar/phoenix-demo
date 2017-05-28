@@ -14,7 +14,10 @@
  - :white_check_mark: Custom error pages (check out the 404...)
  - :white_check_mark: File uploads/images
  - :squirrel: Sessions -- Authenticated user functionallity
- - :squirrel: Deploy to Heroku
+ - :white_check_mark: Deploy to Heroku
+   - The deployment guide for Heroku is perfect, I only had to change to a different buildpack because I am using webpack.
+   - `heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack`
+   - `heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-elixir`
  - :squirrel: Deploy with Nginx
  - :squirrel: SSL
 
