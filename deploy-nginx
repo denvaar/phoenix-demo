@@ -1,0 +1,14 @@
+. ~/environment_variables
+
+mix deps.get --only prod
+MIX_ENV=prod mix compile
+
+npm run deploy
+mix phoenix.digest
+
+# Custom tasks
+MIX_ENV=prod mix ecto.create 
+MIX_ENV=prod mix ecto.migrate
+
+
+PORT=${PHOENIX_PORT} MIX_ENV=prod mix phoenix.server

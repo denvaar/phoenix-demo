@@ -15,11 +15,13 @@
  - :white_check_mark: File uploads/images
  - :squirrel: Sessions -- Authenticated user functionallity
  - :white_check_mark: Deploy to Heroku
-   - The deployment guide for Heroku is perfect, I only had to change to a different buildpack because I am using webpack.
+   - The (deployment guide for Heroku)[http://www.phoenixframework.org/docs/heroku] is perfect, I only had to change to a different buildpack because I am using webpack.
    - `heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack`
    - `heroku buildpacks:add --index 1 https://github.com/HashNuke/heroku-buildpack-elixir`
- - :squirrel: Deploy with Nginx
+ - :white_check_mark: Deploy with Nginx
  - :squirrel: SSL
+   - :white_check_mark: Heroku
+   - :squirrel: Nginx
 
 To start your Phoenix app:
 
