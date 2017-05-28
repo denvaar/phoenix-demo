@@ -2,7 +2,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "watch": "webpack --display-chunks --watch-stdin --progress --color"
+    "watch": "webpack --display-chunks --watch-stdin --progress --color",
+    "deploy": "webpack -p -d"
   },
   "dependencies": {
     "fetch": "^1.1.0",

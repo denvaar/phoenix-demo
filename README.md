@@ -11,12 +11,12 @@
  - :white_check_mark: Markdown support for post content
  - :white_check_mark: ~~Setup Docker for development~~ <-- This was a dumb idea
  - :white_check_mark: Use Webpack instead of Brunch
- - :squirrel: Custom error pages
- - :squirrel: SSL
+ - :white_check_mark: Custom error pages (check out the 404...)
  - :white_check_mark: File uploads/images
  - :squirrel: Sessions -- Authenticated user functionallity
  - :squirrel: Deploy to Heroku
  - :squirrel: Deploy with Nginx
+ - :squirrel: SSL
 
 To start your Phoenix app:
 
