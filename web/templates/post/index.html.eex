@@ -1,7 +1,7 @@
 <%= link "←  Back to Home", to: page_path(@conn, :index) %>
 <h2>Posts</h2>
 <div class="text-right">
-  <%= link "New post", to: post_path(@conn, :new), class: "btn btn-success" %>
+  <%= @current_user && link "New post", to: post_path(@conn, :new), class: "btn btn-success" %>
 </div>
 <%= if length(@posts) == 0 do %>
   <div>No posts to display</div>
@@ -12,7 +12,7 @@
       <h3><%= post.title %></h3>
     <% end %>
     <div>By <%= post.author %> on <span class="pretty-date"><%= post.inserted_at %></span></div>
-    <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+    <%= @current_user && link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
   </div>
 <% end %>
 <div class="text-center">

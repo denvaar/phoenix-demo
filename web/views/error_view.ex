@@ -4,6 +4,10 @@ defmodule PhoenixBlog.ErrorView do
   def render("404.html", _assigns) do
     render("not_found.html", %{})
   end
+  
+  def render("401.html", _assigns) do
+    render("not_authorized.html", %{})
+  end
 
   def render("500.html", _assigns) do
     "Internal server error"

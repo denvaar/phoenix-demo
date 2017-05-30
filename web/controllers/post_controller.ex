@@ -3,6 +3,9 @@ defmodule PhoenixBlog.PostController do
 
   alias PhoenixBlog.Post
   alias PhoenixBlog.ImageUploader
+  
+  plug Guardian.Plug.EnsureAuthenticated,
+    [handler: PhoenixBlog.SessionController] when not action in [:index, :show, :like_post]
 
   def index(conn, params) do
     page = Post

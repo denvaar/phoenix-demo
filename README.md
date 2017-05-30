@@ -13,7 +13,7 @@
  - :white_check_mark: Use Webpack instead of Brunch
  - :white_check_mark: Custom error pages (check out the 404...)
  - :white_check_mark: File uploads/images
- - :squirrel: Sessions -- Authenticated user functionallity
+ - :white_check_mark: Sessions -- Authenticated user functionallity with (Guardian)[https://github.com/ueberauth/guardian]
  - :white_check_mark: Deploy to Heroku
    - The (deployment guide for Heroku)[http://www.phoenixframework.org/docs/heroku] is perfect, I only had to change to a different buildpack because I am using webpack.
    - `heroku buildpacks:set https://github.com/gjaldon/phoenix-static-buildpack`
@@ -39,6 +39,14 @@ To start your Phoenix app:
   * Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+### How to create a user
+
+I decided not to implement registration functionallity, so to create a user, just insert a row manually into the `users` table in the database. You will have to provide a hashed version of your password, so you can generate it like this:
+
+```$ iex -S mix```
+```Comeonin.Bcrypt.hashpwsalt("your_password_here")```
+
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 

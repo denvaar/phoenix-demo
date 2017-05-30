@@ -19,7 +19,8 @@ defmodule PhoenixBlog.Mixfile do
   def application do
     [mod: {PhoenixBlog, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :scrivener_ecto, :scrivener_html, :arc_ecto]]
+                    :phoenix_ecto, :postgrex, :scrivener_ecto, :scrivener_html, :arc_ecto,
+                    :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,6 +41,8 @@ defmodule PhoenixBlog.Mixfile do
      {:gettext, "~> 0.11"},
      {:earmark, "~> 1.1"},
      {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 2.5"},
+     {:guardian, "~> 0.14"},
      {:scrivener_ecto, "~> 1.0"},
      {:arc_ecto, "~> 0.7.0"},
      {:scrivener_html, "~> 1.1"}]

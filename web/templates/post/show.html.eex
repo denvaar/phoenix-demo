@@ -1,6 +1,6 @@
 <%= link "← Back", to: post_path(@conn, :index) %>
 &nbsp;|
-<%= link "Edit", to: post_path(@conn, :edit, @post) %>
+<%= @current_user && link "Edit", to: post_path(@conn, :edit, @post) %>
 
 <div class="jumbotron">
   <h2><%= @post.title %></h2>

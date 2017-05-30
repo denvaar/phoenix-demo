@@ -25,6 +25,13 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+config :guardian, Guardian,
+  issuer: "PhoenixBlog",
+  ttl: { 1, :days },
+  allowed_drift: 2000,
+  secret_key: "whFqxqsfChV6OSCTZtEt3gntNsRpForkM4DYb+dxhLzD80ASMwmZT9UEh2nr8/Us",
+  serializer: PhoenixBlog.GuardianSerializer
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

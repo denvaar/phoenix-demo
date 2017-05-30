@@ -15,10 +15,17 @@ defmodule PhoenixBlog.Router do
     plug :fetch_flash
   end
 
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+    plug PhoenixBlog.CurrentUser
+  end
+
   scope "/", PhoenixBlog do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :browser_auth]
 
     get "/", PageController, :index
+    resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/posts", PostController
   end
 
