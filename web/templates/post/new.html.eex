@@ -3,4 +3,7 @@
 <%= link "←  Back", to: post_path(@conn, :index) %>
 <%= render "form.html", changeset: @changeset,
                         action: post_path(@conn, :create) %>
-
+<script>
+  var content = "";
+</script>
+<script src="<%= static_path(@conn, "/js/mdEditor.js") %>"></script>

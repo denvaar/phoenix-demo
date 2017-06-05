@@ -23,10 +23,10 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :content, class: "control-label" %>
-    <%= textarea f, :content, class: "form-control", style: "min-height: 10em" %>
+    <div id="react-test"></div>
     <%= error_tag f, :content %>
   </div>
+
 
   <div class="form-group">
     <%= checkbox f, :is_published %>

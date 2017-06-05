@@ -9,21 +9,23 @@ var config = {
       "js/app.js",
       "css/app.css" /* putting this here to enable atuo-reload for css because they are not required in js files */
     ],
-    show: "js/show.js"
+    show: "js/show.js",
+    mdEditor: "js/mdEditor.js"
   },
   output: {
     path: "./priv/static",
     filename: "js/[name].js"
   },
   resolve: {
-    modules: [ "node_modules", __dirname + "/web/static" ]
+    modules: [ "node_modules", __dirname + "/web/static" ],
+    extensions: ['.js', '.jsx', '.map']
   },
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.js?|\.jsx$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loaders: ['babel-loader']
       },
       {
         test: /\.(scss|css)$/,

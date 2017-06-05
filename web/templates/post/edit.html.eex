@@ -5,3 +5,8 @@
                         changeset: @changeset,
                         action: post_path(@conn, :update, @post) %>
 <%= link "Delete", to: post_path(@conn, :delete, @post), method: :delete, data: [confirm: "Are you sure?"], class: "link" %>
+
+<script>
+  var content = "<%= escape_javascript {:safe, @changeset.data.content} %>";
+</script>
+<script src="<%= static_path(@conn, "/js/mdEditor.js") %>"></script>
