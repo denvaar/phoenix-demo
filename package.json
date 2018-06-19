@@ -3,7 +3,9 @@
   "license": "MIT",
   "scripts": {
     "watch": "webpack --display-chunks --watch-stdin --progress --color",
-    "deploy": "webpack -p"
+    "deploy": "webpack -p",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "cute-md-editor": "file:///Users/denversmith/Documents/Programming/md-editor",
@@ -14,7 +16,8 @@
     "phoenix_html": "file:deps/phoenix_html",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "showdown": "^1.7.1"
+    "showdown": "^1.7.1",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -31,5 +34,6 @@
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
     "webpack": "2.2.1"
-  }
+  },
+  "snyk": true
 }
